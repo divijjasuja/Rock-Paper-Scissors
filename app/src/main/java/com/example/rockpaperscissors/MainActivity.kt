@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
@@ -82,18 +83,23 @@ fun Choice(player:String,android:String) {
 }
 
 @Composable
-fun ButtonBox() {
+fun Buttons() {
     Row(modifier = Modifier
-        .width(16.dp)
+        .width(10.dp)
         .wrapContentWidth(Alignment.CenterHorizontally)
         .wrapContentHeight(Alignment.Bottom)
         .padding(bottom = 200.dp),
         horizontalArrangement = Arrangement.spacedBy(70.dp)
     ) {
-        Button(text = "Rock", onClick = { /*TODO*/ }) {
+        Button(onClick = {}) {
+            Text(text = "Rock")
         }
-        Text(text = "paper")
-        Text(text = "Scissors")
+        Button(onClick = {}) {
+            Text(text = "paper")
+        }
+        Button(onClick = {}) {
+            Text(text = "Scissors")
+        }
     }
 }
 
@@ -114,7 +120,7 @@ fun EndResult() {
     Score()
     JetpackText()
     Choice("Rock","Scissors")
-    ButtonBox()
+    Buttons()
 }
 
 @Preview(showBackground = true, showSystemUi = true)
